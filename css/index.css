@@ -25,7 +25,7 @@ header{
 header h1{
 	padding: .5em;
 	font: 800% BickhamScriptPro, opensans, sans-serif;
-	color: #343434;
+	color: #58a;
 	text-align: center;
 	word-spacing: .3em;
 	text-indent: .3em;
@@ -54,7 +54,7 @@ nav li a{
 	text-decoration: none;
 }
 nav li a:hover{
-	color: #787878;
+	color: #58a;
 }
 /*emails设置*/
 nav li a#nav-email{
@@ -84,7 +84,7 @@ main section{
 }
 main section:nth-child(2n+1){
 	/* background:  url(../images/sectionBg1.jpg); */
-	background: rgba(164,199,221,.5);
+	background: #58a;
 }
 main section::before{
 	content: "part 1";/*生成的编号*/
@@ -98,7 +98,7 @@ main section::before{
 	line-height: 1.5;
 }
 main section:nth-child(2n+1)::before{
-	color: rgb(164,199,221);
+	color: #58a;
 	background: linear-gradient(to top right, transparent 50%, #f6f6f6 0),
 				linear-gradient(to top left, transparent 50%, #f6f6f6 0);
 	background-size: 50% 100%;
@@ -107,8 +107,8 @@ main section:nth-child(2n+1)::before{
 }
 main section:nth-child(2n+2)::before{
 	color: #f6f6f6;
-	background: linear-gradient(to top right, transparent 50%, rgba(164,199,221,.5) 0),
-				linear-gradient(to top left, transparent 50%, rgba(164,199,221,.5) 0);
+	background: linear-gradient(to top right, transparent 50%, #58a 0),
+				linear-gradient(to top left, transparent 50%, #58a 0);
 	background-size: 50% 100%;
 	background-position: top left, top right;
 	background-repeat: no-repeat;
