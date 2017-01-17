@@ -1,0 +1,59 @@
+@font-face{
+	font-family: BickhamScriptPro;
+	src: url(../fonts/BickhamScriptPro-Regular.otf);
+}
+@font-face{
+	font-family: opensans;
+	src: url(../fonts/opensans.ttf);
+}
+/**
+	html和body设置
+*/
+html,body{
+	font-size: 16px;/*chrome最小字体为12px*/
+	background-color: #f6f6f6;
+	overflow: hidden;	
+}
+
+/**
+	header部分
+*/
+header{
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+header h1{
+	padding: .5em;
+	font: 800% BickhamScriptPro, opensans, sans-serif;
+	color: #343434;
+	text-align: center;
+	word-spacing: .3em;
+	text-indent: .3em;
+	user-select: none;
+}
+nav{
+	display: flex;
+	font: 150% opensans, Arial, sans-serif;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+}
+nav ul{
+	padding: 0;
+}
+nav li{
+	display: inline-block;
+	list-style: none;
+	margin-right: 22rem;
+}
+nav li:last-child{
+	margin-right: 0;
+}
+nav li a{
+	color: #515151;
+	text-decoration: none;
+}
+nav li a:hover{
+	color: #787878;
+}
