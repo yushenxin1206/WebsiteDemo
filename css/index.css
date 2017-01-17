@@ -11,8 +11,7 @@
 */
 html,body{
 	font-size: 16px;/*chrome最小字体为12px*/
-	background-color: #f6f6f6;
-	overflow: hidden;	
+	background-color: #f6f6f6;	
 }
 
 /**
@@ -56,4 +55,61 @@ nav li a{
 }
 nav li a:hover{
 	color: #787878;
+}
+/*emails设置*/
+nav li a#nav-email{
+	position: relative;
+}
+nav li a#nav-email::before{
+	content: "yushenxin@foxmail.com";
+	position: absolute;
+	top: -2em;
+	font-size: .6em;
+	color: #515151;
+	width: 0;
+	overflow: hidden;
+	transition: width 1s;
+	border-bottom: 1px solid #787878;
+	padding-bottom: .05em;
+	cursor: auto;
+}
+nav li a#nav-email:hover::before{
+	width: 20ch;
+}
+
+/*main部分（designs）设置*/
+main section{
+	height: 100vh;
+	position: relative;
+}
+main section:nth-child(2n+1){
+	/* background:  url(../images/sectionBg1.jpg); */
+	background: rgba(164,199,221,.5);
+}
+main section::before{
+	content: "part 1";/*生成的编号*/
+	font: 300% BickhamScriptPro, opensans, sans-serif;
+	position: absolute;
+	top: 0; left: 50%;
+	transform: translateX(-50%);
+	width: 5em;
+	height: 2.5em;
+	text-align: center;
+	line-height: 1.5;
+}
+main section:nth-child(2n+1)::before{
+	color: rgb(164,199,221);
+	background: linear-gradient(to top right, transparent 50%, #f6f6f6 0),
+				linear-gradient(to top left, transparent 50%, #f6f6f6 0);
+	background-size: 50% 100%;
+	background-position: top left, top right;
+	background-repeat: no-repeat;
+}
+main section:nth-child(2n+2)::before{
+	color: #f6f6f6;
+	background: linear-gradient(to top right, transparent 50%, rgba(164,199,221,.5) 0),
+				linear-gradient(to top left, transparent 50%, rgba(164,199,221,.5) 0);
+	background-size: 50% 100%;
+	background-position: top left, top right;
+	background-repeat: no-repeat;
 }
