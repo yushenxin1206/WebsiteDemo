@@ -18,7 +18,9 @@ html,body{
 	font-size: 16px;/*chrome最小字体为12px*/
 	background-color: white;
 }
-
+a{
+	text-decoration: none;
+}
 /*
 	header部分
 */
@@ -72,7 +74,6 @@ nav li:last-child{
 }
 nav li a{
 	color: #515151;
-	text-decoration: none;
 }
 nav li a:hover{
 	color: #58a;
@@ -146,7 +147,6 @@ a#back-to-top{
 	display: none;
 	position: fixed;
 	top: 50vh; right: 2em;
-	text-decoration: none;
 	width: 3em;
 	height: 3em;
 	color: white;
