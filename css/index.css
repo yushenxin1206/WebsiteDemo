@@ -131,7 +131,7 @@ section:nth-child(2n+2)::before{
 }
 
 /*媒体查询*/
-@media screen and (max-width:600px){ 
+@media screen and (max-width:700px){ 
 	h1{
 		font-size: 800%;
 	}
@@ -141,10 +141,18 @@ section:nth-child(2n+2)::before{
 		align-items:flex-start;
 	}
 }
+@media screen and (max-width:530px){
+	nav li:last-child{
+		display: none;
+	}
+	nav li:nth-last-child(2){
+		margin-right: 0;
+	}
+}
 @media screen and (max-width:440px){ 
 	h1{
-		font-size: 500%;
-		margin-bottom: 1em;
+		font-size: 600%;
+		margin:1.1em 0;
 	}
 	nav{
 		font-size: 80%;
