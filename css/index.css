@@ -150,6 +150,12 @@ section:nth-child(2n+2)::before{
 		min-height: 23vh;
 		align-items:flex-start;
 	}
+	section::before{
+		font-size: 200%;
+	}
+	header{
+		height: calc(100vh - 2*2.5em);
+	}
 }
 @media screen and (max-width:530px){
 	nav li:last-child{
