@@ -141,7 +141,7 @@ section:nth-child(2n+2)::before{
 		align-items:flex-start;
 	}
 }
-@media screen and (max-width:550px){
+@media screen and (max-width:530px){
 	nav li:last-child{
 		display: none;
 	}
