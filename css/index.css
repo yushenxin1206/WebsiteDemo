@@ -25,7 +25,7 @@ html,body{
 header{
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
+	height: calc(100vh - 3*2.5em);
 	position: relative;
 }
 header::after{/*底部渐变遮罩*/
@@ -52,11 +52,12 @@ h1{
 	word-spacing: .3em;
 	text-indent: .3em;/*由于视觉差 需要右移一点*/
 	user-select: none;
+	transform: translateY(.3em);
 }
 /*导航栏设置*/
 nav{
 	font: 150% opensans, Arial, sans-serif;
-	min-height: 40vh;
+	min-height: 30vh;
 }
 nav ul{
 	padding: 0;
@@ -99,45 +100,54 @@ nav li a#nav-email:hover::before{
 
 
 /*main部分设置*/
+main{
+	counter-reset: section;/*设置计数器*/
+}
 section{
 	height: 100vh;
 	position: relative;
+	counter-increment: section;/*计数器增加*/
 }
 section:nth-child(2n+1){
 	background: #58a;
 }
 section::before{
-	content: "part 1";/*生成的编号*/
+	content:"part " counter(section);
 	font: 300% BickhamScriptPro, opensans, sans-serif;
-	position: absolute;
-	top: 0; left: 50%;
-	transform: translateX(-50%);
+	display: block; 
+	margin: auto;
 	width: 5em;
 	height: 2.5em;
 	text-align: center;
 	text-indent: .3em;
 	line-height: 1.5;
 	color: #58a;
-	background: linear-gradient(to top right, transparent 50%, white 0),
-				linear-gradient(to top left, transparent 50%, white 0);
+	/*用一个px隔离区消除毛刺*/
+	background: linear-gradient(to top right, transparent 50%,
+					transparent calc(50% + 1px), white 0),
+				linear-gradient(to top left, transparent 50%,
+					transparent calc(50% + 1px), white 0);
 	background-size: 50% 100%;
 	background-position: top left, top right;
 	background-repeat: no-repeat;
 }
 section:nth-child(2n+2)::before{
 	color: white;
-	background-image: linear-gradient(to top right, transparent 50%, #58a 0),
-				linear-gradient(to top left, transparent 50%, #58a 0);
+	background-image: linear-gradient(to top right, transparent 50%, 
+						transparent calc(50% + 1px), #58a 0),
+					  linear-gradient(to top left, transparent 50%,
+						transparent calc(50% + 1px), #58a 0);
 }
 
 /*媒体查询*/
 @media screen and (max-width:700px){ 
 	h1{
 		font-size: 800%;
+		margin:1.5em 0;
 	}
 	nav{
 		font-size: 100%;
-		min-height: 30vh;
+		min-height: 23vh;
 		align-items:flex-start;
 	}
 }
@@ -152,11 +162,9 @@ section:nth-child(2n+2)::before{
 @media screen and (max-width:440px){ 
 	h1{
 		font-size: 600%;
-		margin:1.1em 0;
 	}
 	nav{
 		font-size: 80%;
 		min-height: 30vh;
-		align-items:flex-start;
 	}
 }
