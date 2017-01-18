@@ -1,3 +1,8 @@
+/**
+	by yushenxin
+	email: yushenxin@foxmail.com
+*/
+
 @font-face{
 	font-family: BickhamScriptPro;
 	src: url(../fonts/BickhamScriptPro-Regular.otf);
@@ -11,7 +16,7 @@
 */
 html,body{
 	font-size: 16px;/*chrome最小字体为12px*/
-	background-color: #f6f6f6;	
+	background-color: white;	
 }
 
 /**
@@ -21,22 +26,36 @@ header{
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
+	position: relative;
 }
-header h1{
-	padding: .5em;
-	font: 800% BickhamScriptPro, opensans, sans-serif;
-	color: #58a;
-	text-align: center;
-	word-spacing: .3em;
-	text-indent: .3em;
-	user-select: none;
+header::after{/*底部渐变遮罩*/
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 3em;
+	background: linear-gradient(transparent,white);
 }
-nav{
+header h1,header nav{
 	display: flex;
-	font: 150% opensans, Arial, sans-serif;
-	flex: 1;
 	align-items: center;
 	justify-content: center;
+}
+header h1{
+	flex: 1;
+	padding: .5em;
+	font: 1000% BickhamScriptPro, opensans, sans-serif;
+	color: #58a;
+	text-align: center;
+	line-height: 1;
+	word-spacing: .3em;
+	text-indent: .3em;/*由于视觉差 需要右移一点*/
+	user-select: none;
+}
+/*导航栏设置*/
+nav{
+	font: 150% opensans, Arial, sans-serif;
+	min-height: 40vh;
 }
 nav ul{
 	padding: 0;
@@ -44,7 +63,7 @@ nav ul{
 nav li{
 	display: inline-block;
 	list-style: none;
-	margin-right: 22rem;
+	margin-right: 17vw;
 }
 nav li:last-child{
 	margin-right: 0;
@@ -77,13 +96,13 @@ nav li a#nav-email:hover::before{
 	width: 20ch;
 }
 
-/*main部分（designs）设置*/
+
+/*main部分设置*/
 main section{
 	height: 100vh;
 	position: relative;
 }
 main section:nth-child(2n+1){
-	/* background:  url(../images/sectionBg1.jpg); */
 	background: #58a;
 }
 main section::before{
@@ -95,21 +114,17 @@ main section::before{
 	width: 5em;
 	height: 2.5em;
 	text-align: center;
+	text-indent: .3em;
 	line-height: 1.5;
-}
-main section:nth-child(2n+1)::before{
 	color: #58a;
-	background: linear-gradient(to top right, transparent 50%, #f6f6f6 0),
-				linear-gradient(to top left, transparent 50%, #f6f6f6 0);
+	background: linear-gradient(to top right, transparent 50%, white 0),
+				linear-gradient(to top left, transparent 50%, white 0);
 	background-size: 50% 100%;
 	background-position: top left, top right;
 	background-repeat: no-repeat;
 }
 main section:nth-child(2n+2)::before{
-	color: #f6f6f6;
-	background: linear-gradient(to top right, transparent 50%, #58a 0),
+	color: white;
+	background-image: linear-gradient(to top right, transparent 50%, #58a 0),
 				linear-gradient(to top left, transparent 50%, #58a 0);
-	background-size: 50% 100%;
-	background-position: top left, top right;
-	background-repeat: no-repeat;
 }
