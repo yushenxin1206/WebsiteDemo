@@ -36,12 +36,13 @@ header::after{/*底部渐变遮罩*/
 	height: 3em;
 	background: linear-gradient(transparent,white);
 }
-header h1,header nav{
+/*标题设置*/
+h1,nav{
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
-header h1{
+h1{
 	flex: 1;
 	padding: .5em;
 	font: 1000% BickhamScriptPro, opensans, sans-serif;
@@ -98,14 +99,14 @@ nav li a#nav-email:hover::before{
 
 
 /*main部分设置*/
-main section{
+section{
 	height: 100vh;
 	position: relative;
 }
-main section:nth-child(2n+1){
+section:nth-child(2n+1){
 	background: #58a;
 }
-main section::before{
+section::before{
 	content: "part 1";/*生成的编号*/
 	font: 300% BickhamScriptPro, opensans, sans-serif;
 	position: absolute;
@@ -123,8 +124,31 @@ main section::before{
 	background-position: top left, top right;
 	background-repeat: no-repeat;
 }
-main section:nth-child(2n+2)::before{
+section:nth-child(2n+2)::before{
 	color: white;
 	background-image: linear-gradient(to top right, transparent 50%, #58a 0),
 				linear-gradient(to top left, transparent 50%, #58a 0);
+}
+
+/*媒体查询*/
+@media screen and (max-width:600px){ 
+	h1{
+		font-size: 800%;
+	}
+	nav{
+		font-size: 100%;
+		min-height: 30vh;
+		align-items:flex-start;
+	}
+}
+@media screen and (max-width:440px){ 
+	h1{
+		font-size: 500%;
+		margin-bottom: 1em;
+	}
+	nav{
+		font-size: 80%;
+		min-height: 30vh;
+		align-items:flex-start;
+	}
 }
