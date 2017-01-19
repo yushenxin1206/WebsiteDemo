@@ -11,12 +11,12 @@ $(function(){
 	$window.scroll(fScroll);
 	
 	$back2top.click(function(){
-		$("body").animate({scrollTop: 0}, 800);
+		$("body").animate({scrollTop: 0}, 400);
 	});
 	
 	$("a#nav-designs").click(function(){
 		var scrollTop=$("#section-1").offset().top;
-		$("body").animate({scrollTop: scrollTop}, 800);
+		$("body").animate({scrollTop: scrollTop}, 400);
 	});
 	
 	/*函数封装*/
