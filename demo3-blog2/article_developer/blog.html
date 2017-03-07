@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<head>
+    <title>李狗蛋的文章</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responsive HTML5 Website Landing Page for Developers">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <link rel="shortcut icon" href="favicon.ico">  
+	
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+</head> 
+
+<body>
+	<!--遮罩层-->
+	<div class="mask"></div>
+    <!-- ******HEADER****** --> 
+    <header class="header">
+        <div class="container">                       
+                      
+        </div><!--//container-->
+    </header><!--//header-->
+    
+    <div class="container sections-wrapper">
+        <div class="row">
+            <div class="primary col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
+               <section class="essay section">
+                    <div class="section-inner">
+                        <h2 class="">简书仿站报告（四）：如何制作文章详情页</h2>
+						<div class="title-follow">
+							<a class="avatar"><img width="35" height="35" src="./assets/images/user-head.jpg" class="user-head" />
+							</a>
+							<a class="author">王大锤</a>
+							<a class="follow">关注</a>
+							<span class="name-follow">2017.02.20 16:01</span>
+						</div>
+						
+                        <div class="content">    
+                            <p>简书仿站的文章详情页的基本功能跟首页差不多，因此制作的过程我就不再详细讲述。而是换一个角度，通过介绍那些文章详情页会使用到的函数的具体使用方法来更深入的理解制作的过程。</p>
+							<h5>文章详情页的制作方法</h5>
+							<h6>1.建single.php，这是文章详情页的页面文件。</h6>
+							<p>打开简书网站的任何一篇文章页，保存网页到桌面，会得到一个html文件和文章页所有文件的一个文件夹。将html文件改成single.php。连同文章页的所有文件图片JS等全部存到jianshu文件夹中。</p>
+							<h6>2.登入你的WP后台仪表盘，找到single.php，就在这里修改内容。</h6>
+							<p>在仪表盘右侧导航中找到【外观】-【编辑】，找到single.php文件，就可以在代码编辑区内修改了。（就跟前面找index.php方法一样，去看看报告（二）），以后的代码修改就在这里修改，然后点击下面的蓝色按钮更新，去前台看看效果。</p>
+							<h6>3.修改single.php里头的相对地址</h6>
+							<p>由于single页的所有的文件图片都保存到了jianshu文件夹这个主目录里头了，那么就把single.php中的相对地址都换上，还记得吧，用下面的代码。（忘记了就去看看报告（二））。</p>
+							<pre><code>&lt;?php bloginfo('template_directory'); ?&gt;//表示主目录的地址</code></pre>
+							<h6>以下介绍文章详情页核心功能会用到的WP函数（更正确是说话应该是WP的模板标签），用这些模板标签函数替换掉静态的文本就可以了。</h6>
+							<h5>1.获取文章标题</h5>
+							<pre><code>&lt;? php the_title(); ?&gt;//用于显示当前文章的标题</code></pre>
+							<p>放在主循环内用于显示当前文章的标题。主循环是每循环一次就会有一篇当前文章，它就是显示当前文章的标题。循环还是要用的，因为不只是一篇文章的详情页，是很多篇文章的详情页，详情页的single.php虽然只有一个文件，但是代表了很多的文章详情页，所以就要用循环来实现多篇文章显示效果。</p>
+							<h5>附.显示当前文章的链接</h5>
+							<pre><code>&lt;? php the_permalink() ?&gt;</code></pre>
+							<p>这段标签用来显示当前文章的固定链接，标题鼠标点击以后的<code>href</code>一定会有链接，就用这个代替。由于<code>the_permalink()</code>只能显示正在被主循环处理的文章的固定链接，因此用户无法用它来显示任意文章。如果你希望显示某篇文章的固定链接，并且你知道这篇文章的ID，可以考虑使用<code>get_permalink()</code>。如果你希望不在主循环中使用，也请你用<code>get_permalink()</code>。比如<code>&lt;? echo'get_permalink(3);'?&gt;</code>，3是文章ID。</p>
+							<p>另外<code>the_permalink()</code>和<code>get_permalink()</code>的区别就是一个不加echo，一个加。以后碰到类似的其他模板标签，都是这个区别。get是获得的意思，获得了自然就要打印出来，就是echo了。</p>
+							<h5>2.获取文章内容</h5>
+							<pre><code>&lt;?php the_content();?&gt;//主循环内显示当前文章的内容</code></pre>
+							<p>这个也是要在主循环内使用的。（关于循环的内容，下次再讲，报告（三）有提到一点）。</p>
+							<p>这个标签更正确的用法是这样的：</p>
+							<pre><code>&lt;?php the_content( $more_link_text, $strip_teaser, $more_file ); ?
+							//后两个参数都可以默认，不用填</code></pre>
+							<p>比如<code>&lt;?php the_content('Read more...'); ?&gt;</code></p>
+							<p>Read more...就是文章末尾更多内容点击&gt;&gt;&gt;之类的。<br>另外，这个标签，也有<code>get_the_content()</code>。</p>
+							<h5>3.获取文章分类</h5>
+							<pre><code>&lt;?php the_category(',') ?&gt;</code></pre>
+							<p>这个标签真正的用法是这样的。</p>
+							<pre><code>&lt;?php the_category( $separator, $parents ); ?&gt;</code></pre>
+							<p>第一个参数是，多个分类之间用什么符号隔开，可以是空格，或者逗号之类的，比如<code>&lt;?php the_category(',') ?&gt;</code>，第二个参数是当你要显示父子分类目录的时候可以填，'multiple' 表示显示父子分类目录，'single' 是只显示子分类目录，这顺便也是默认模式<em>*</em></p>                   
+                        </div><!--//content-->    
+						
+						<hr class="divider" />
+						
+						<div class="like-share">
+							<a class="like">喜 欢</a>
+							<div class="share">
+								<a class="share-weixin" title="分享至微信">
+									<i class="iconfont icon-weixin"></i>
+								</a>
+								<a class="share-sinaweibo" title="分享至新浪微博">
+									<i class="iconfont icon-sinaweibo"></i>
+								</a>
+								<a class="share-qzone" title="分享至QQ空间">
+									<i class="iconfont icon-qzone"></i>
+								</a>
+								<a tabindex="0" class="share-more" data-toggle="popover"
+								data-html=true data-placement="top" data-trigger="focus">
+									<i class="iconfont">更多分享</i>
+								</a>
+								<div class="qrcode">
+								
+								</div>
+								<div class="share-more-html">
+									<ul class="share-more-list">
+										<li>
+										<a class="share-renren"><i class="iconfont icon-renren"></i>分享到人人网</a>
+										</li>
+										<li>
+											<a class="share-kaixinwang"><i class="iconfont icon-kaixinwang"></i>分享到开心网</a>
+										</li>
+										<li>
+											<a class="share-msn"><i class="iconfont icon-msn"></i>分享到MSN</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+						<div class="comments">
+							<div class="comments-head">
+								<a class="avatar">
+									<img width="40" height="40" src="./assets/images/user-head.jpg"class="user-head" />
+								</a>
+								<div class="add-comments-block">
+									<textarea class="enter-comments" id="textarea0" placeholder="请写下你的评论..."></textarea>
+									<div class="comment-buttons">
+										<a tabindex="0" class="add-emoji" data-toggle="popover" data-html=true data-trigger="focus" data-placement="top">表情</a>
+										<a class="send">发送</a>
+										<a class="cancel">取消</a>
+									</div>
+								</div>
+							</div>
+							<div class="comments-list">
+								<div class="comments-floor" id="comments-floor-1">
+									<div class="main-comments">
+										<div class="comments-info">
+											<a class="avatar"><img width="40" height="40" src="./assets/images/user-head.jpg" class="user-head" />
+											</a>
+											<a class="observers">王大锤</a>
+											<span class="name-follow reply-time">1楼 · 2017.02.20 16:01</span>
+										</div>
+										<p class="comments-content">我是沙发</p>
+										<a class="reply">回复</a>
+									</div>
+									<div class="sub-comments-list">
+										<div class="sub-comments" id="sub-comments-1-1">
+											<a class="observers">王大锤</a>
+											<p class="comments-content">恭喜你</p>
+											<span class="reply-time">2017.02.20 16:02</span>
+											<a class="reply">回复</a>
+										</div>
+										<div class="sub-comments" id="sub-comments-1-2">
+											<a class="observers">王大锤</a>
+											<p class="comments-content">同楼上[困]</p>
+											<span class="reply-time">2017.02.20 16:03</span>
+											<a class="reply">回复</a>
+										</div>
+										<div class="add-comments">
+											<a class="add-comments-button">添加新评论</a>
+											<div class="add-comments-block">
+												<textarea class="enter-comments" id="textarea1" placeholder="请写下你的评论..."></textarea>
+												<div class="comment-buttons">
+													<a tabindex="0" class="add-emoji" data-toggle="popover" data-html=true data-trigger="focus" data-placement="top">表情</a>
+													<a class="send">发送</a>
+													<a class="cancel">取消</a>
+												</div>
+											</div>
+										</div><!--add-comments-->
+									</div><!--sub-comments-list-->
+								</div><!--comments-floor-->
+							</div><!--//comments-list-->
+						</div><!--//comments-->
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+            </div><!--//secondary-->    
+        </div><!--//row-->
+    </div><!--//masonry-->
+    
+    <!-- ******FOOTER****** --> 
+    <footer class="footer">
+        <div class="container text-center">
+                <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
+                <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+        </div><!--//container-->
+    </footer><!--//footer-->
+ 
+    <!-- Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>    
+	<!--common js-->
+	<script src="./assets/js/emoji.js"></script>
+	<script src="./assets/js/blog.js"></script>
+</body>
+</html> 
+

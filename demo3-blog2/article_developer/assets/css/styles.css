@@ -1,0 +1,468 @@
+/*   
+ * Template Name: Developer - Responsive Website Template for Developers
+ * Version: 1.5
+ * Author: Xiaoying Riley
+ * Twitter: @3rdwave_themes
+ * License: Creative Commons Attribution 3.0 License
+ * Website: http://themes.3rdwavemedia.com/
+*/
+@font-face {font-family: "iconfont";
+  src: url('../plugins/iconfont/iconfont.eot?t=1487644766760'); /* IE9*/
+  src: url('../plugins/iconfont/iconfont.eot?t=1487644766760#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../plugins/iconfont/iconfont.woff?t=1487644766760') format('woff'), /* chrome, firefox */
+  url('../plugins/iconfont/iconfont.ttf?t=1487644766760') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../plugins/iconfont/iconfont.svg?t=1487644766760#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.mask{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(255,255,255,.8);
+	z-index: -1;
+	filter: opacity(0);
+	transition: filter .3s;
+}
+/* ======= Base ======= */
+body {
+  font-family: -apple-system,SF UI Display,Arial,PingFang SC,Hiragino Sans GB,
+				Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+  color: #434343;
+  background: #DAE3E7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  color: #778492;
+}
+a {
+  color: #3AAA64;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+a:hover {
+  text-decoration: underline;
+  color: #2d844e;
+  cursor: pointer;
+}
+a:focus {
+  text-decoration: none;
+}
+.btn,
+a.btn {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  font-family: 'Montserrat', arial, sans-serif;
+  padding: 8px 16px;
+  font-weight: bold;
+}
+.btn .fa,
+a.btn .fa {
+  margin-right: 5px;
+}
+.btn:focus,
+a.btn:focus {
+  color: #fff;
+}
+a.btn-cta-primary,
+.btn-cta-primary {
+  background: #54ba4e;
+  border: 1px solid #54ba4e;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+a.btn-cta-primary:hover,
+.btn-cta-primary:hover {
+  background: #49ac43;
+  border: 1px solid #49ac43;
+  color: #fff;
+}
+a.btn-cta-secondary,
+.btn-cta-secondary {
+  background: #479FC8;
+  border: 1px solid #479FC8;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+a.btn-cta-secondary:hover,
+.btn-cta-secondary:hover {
+  background: #3893bd;
+  border: 1px solid #3893bd;
+  color: #fff;
+}
+.text-highlight {
+  color: #32383e;
+}
+.label-theme {
+  background: #3AAA64;
+  font-size: 12px;
+}
+a.dotted-link {
+  border-bottom: 1px dotted #778492;
+  color: #778492;
+}
+a.dotted-link:hover {
+  text-decoration: none;
+  color: #49515a;
+}
+a.avatar{
+	float: left;
+	height: min-content;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+.name-follow{
+	display: block;
+	font-size: 80%;
+	font-weight: normal;
+	color: #999;
+}
+/*
+iframe {
+
+    .header {
+        padding: 0;
+    }
+}
+
+.iframe-wrapper {
+    overflow: auto;
+    -webkit-overflow-scrolling:touch;
+}
+*/
+/* ======= Header ======= */
+.header {
+  padding: 30px 0;
+  background: #f5f5f5;
+  border-top: 10px solid #778492;
+}
+
+/* ======= Sections======= */
+.sections-wrapper {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.section {
+  margin-bottom: 30px;
+}
+.section .section-inner {
+  background: #fff;
+  padding: 30px;
+}
+/*title follow*/
+.title-follow{
+	margin: 30px 0;
+}
+.title-follow .author{
+	font-size: 80%;
+}
+.title-follow .follow{
+	display: inline-block;
+	text-decoration: none;
+	height: 1.5em;
+	width: 3em;
+	font-size: 80%;
+	color: white;
+	background-color: #52d03c;
+	line-height: 1.5em;
+	text-align: center;
+	border-radius: .7em;
+}
+.title-follow .follow:hover{
+	background-color: #62e04c;
+}
+
+/* like and share*/
+.like-share{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.like-share a{
+	text-decoration: none;
+	display: inline-block;
+	box-sizing: content-box;
+}
+a.like{
+	font-size: 1.1em;
+	height: 1em;
+	padding: .5em 1em;
+	line-height: 1;
+	border-radius: 1em;
+	color: #ea6f5a;
+	border: .05em solid;
+}
+a.like:hover{
+	box-shadow: 0 0 3px inset;
+}
+.share{
+	display: flex;
+	align-items: center;
+}
+.share>a{
+	margin-left: .5em;
+	width: 2.7em;
+	height: 2.7em;
+	border-radius: 50%;
+	border: 1px solid #ccc;
+	text-align: center;
+	line-height: 2.7em;
+}
+.share>a:hover{
+	background-color: #f5f5f5;
+}
+.share a .iconfont{
+	font-size: 1.5em;
+}
+a.share-weixin .icon-weixin:before { 
+	content: "\e710"; 
+	color: #42c02c;
+}
+a.share-sinaweibo .icon-sinaweibo:before { 
+	content: "\e613"; 
+	color: #ea6f5a;
+}
+a.share-qzone .icon-qzone:before { 
+	content: "\e610"; 
+	color: #ffc000;
+}
+a.share-more{
+	width: auto;
+	padding: .4em .8em;
+	border-radius: 5em;
+	font-size: .5em;
+	color: #888;
+	outline: 0;
+}
+.share-more-html{
+	position: absolute;
+	clip: rect(0,0,0,0);
+}
+.share-more-list{
+	width: 10em;
+	margin: 0;
+	padding: 0;
+}
+.share-more-list li{
+	list-style: none;
+	margin: .3em;
+}
+.share-more-list i{
+	margin-right: .4em;
+	
+}
+.share-more-list i::before{
+	font-size: .8em;
+}
+.icon-renren::before{
+	content: "\e636"; 
+	color: #217dc6;
+}
+.icon-kaixinwang::before{
+	content: "\e6b1"; 
+	color: #ffc000;
+}
+.icon-msn::before{
+	content: "\e67c"; 
+	color: #222;
+}
+.qrcode{
+	background-color: #fff;
+	font-size: .8em;
+	width: 250px;
+	height: 280px;
+	padding: 2em;
+	text-align: center;
+	box-shadow: 0 0 4px #666;
+	position: fixed;
+	top: calc(50vh - 175px);
+	left: calc(50vw - 125px);
+	z-index: -1;
+	filter: opacity(0);
+	transition: filter .3s, top .3s;
+}
+
+/* comments */
+.comments{
+	margin-top: 5em;
+}
+.add-comments-block{
+	flex: 1;
+}
+.enter-comments{
+	width: 100%;
+	font-size: 85%;
+	color: #666;
+	height: 6em;
+	border-radius: .3em;
+	background-color: #f8f8f8;
+	resize: none;
+}
+.comment-buttons a{
+	font-size: .9em;
+}
+.emoji-box-wrap{
+	padding: 1em 2em 1em 1em;
+	width: 20em;
+	height: 8.8em;
+	overflow: hidden;
+}
+.emoji-box{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	box-sizing: border-box;
+}
+.emoji-box span{
+	cursor: pointer;
+}
+.comment-buttons .cancel,.comment-buttons .send{
+	float: right;
+	margin-left: 1.5em;
+}
+.comment-buttons .cancel{
+	color: #666;
+}
+.comment-buttons .cancel:hover{
+	color: #888;
+}
+.reply-time{
+	font-size: 60%;
+	font-weight: normal;
+	color: #999;
+	margin-top: 5px;
+}
+
+/* 顶部输入评论 */
+.comments-head{
+	display: flex;
+	height: 10em;
+}
+
+/* 评论列表(评论分页) */
+.comments-list{
+	padding-top: 3em;
+	border-top: 1px solid #e3e3e3;
+}
+.comments-content{
+	font-size: 90%;
+}
+a.observers{
+	font-size: 90%;
+}
+
+/* main comments*/
+.main-comments{
+	margin-bottom: 1em;
+}
+.main-comments .user-head{
+	position: static;
+}
+.comments-info{
+	margin-bottom: 1em;
+}
+
+/* sub comments*/
+.sub-comments-list{
+	padding-left: 1em;
+	border-left: 2px solid #ccc;
+}
+.sub-comments{
+	margin-bottom: 1em;
+}
+.sub-comments-list .reply-time{
+	display: inline;
+}
+.sub-comments-list .observers{
+	font-size: 80%;
+}
+.sub-comments-list .comments-content::before{
+	content: " : ";
+	color: #000;
+}
+.sub-comments-list .comments-content{
+	display: inline-block;
+	font-size: 80%;
+}
+
+.sub-comments-list .reply-time::before{
+	content: "\A";
+	white-space: pre;
+}
+.sub-comments-list .reply{
+	font-size: 60%;
+}
+
+
+/* ======= Footer ======= */
+.footer {
+  background: #32383e;
+  color: #fff;
+  padding: 10px 0;
+}
+.footer .copyright {
+  line-height: 1.6;
+  color: #a1aab4;
+  font-size: 14px;
+}
+.footer a {
+  color: #fff;
+}
+.footer .fa-heart {
+  color: #fb866a;
+}
+/* Extra small devices (phones, less than 768px) */
+@media (max-width: 767px) {
+  .header {
+    text-align: center;
+  }
+  .header .profile-image {
+    float: none !important;
+    margin: 0 auto;
+  }
+  .header .profile-content {
+    float: none !important;
+    text-align: center;
+  }
+  .header .btn {
+    margin-top: 30px;
+    float: none !important;
+  }
+  .essay-image {
+    margin-bottom: 15px;
+  }
+  .share{
+	display: none;
+  }
+}
+/* Small devices (tablets, 768px and up) */
+/* Medium devices (desktops, 992px and up) */
+/* Large devices (large desktops, 1200px and up) */
+/* Ex-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1400px) {
+  .container {
+    width: 1360px;
+  }
+}
