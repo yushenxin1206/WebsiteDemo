@@ -1,0 +1,76 @@
+*{margin:0;padding:0;}
+li{
+	list-style-type:none;
+}
+#writingManagement{
+	width:600px;
+	height:800px;
+	margin:0 auto;
+	padding:20px;
+	background-color:#eef;
+	-moz-border-radius: 35px; 
+	-webkit-border-radius: 35px; 
+	border-radius:35px; 
+	box-shadow:0px 0px 5px #888888;
+}
+#writingManagement li{
+	list-style-type:none;
+	border-bottom:1px #aca solid;
+	margin-bottom:10px;
+	padding-bottom:5px;
+}
+#writingManagement p{
+	display:inline-block;
+	font-weight:500;
+	width:400px;
+	overflow:hidden;
+}
+button{
+	cursor:pointer;
+	margin:5px;
+}
+#writingManagement .number{
+	font-weight:bold;
+	margin-right:20px;
+	margin-left:10px;
+}
+#writingManagement .uploadTime{
+	color:#a00;
+	font-size:14px;
+	margin-left:10px;
+}
+#pageSelect{
+	width:100px;
+	margin:0 auto;/*要先设置宽度，才能根据宽度（整个宽度，包括设置的width和padding等）自适应居中*/
+	font-size:14px;
+	font-weight:600;
+	color:#686;
+}
+#pageNum{
+	margin-left:10px;
+}
+
+#writingView{
+	width:800px;
+	height:3000px;
+	margin:0 auto;
+	padding:20px;
+	background-color:#eef;
+	-moz-border-radius: 35px; 
+	-webkit-border-radius: 35px; 
+	border-radius:35px; 
+	box-shadow:0px 0px 5px #888888;
+	overflow:hidden;
+}
+#writingPreview{
+	width:800px;
+	height:3000px;
+	margin:0 auto;
+	padding:20px;
+	background-color:#eef;
+	-moz-border-radius: 35px; 
+	-webkit-border-radius: 35px; 
+	border-radius:35px; 
+	box-shadow:0px 0px 5px #888888;
+	overflow:hidden;
+}

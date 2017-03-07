@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="favicon.ico" rel="shortcut icon"/>
+<title>管理员账号注册</title>
+<link rel='stylesheet' href='CSS/register.css' />
+</head>
+
+<body>
+	<!--<div id="hidebg"></div>-->
+	<div id="wrap">
+		<button id="logout">登出</button>
+		<div id="register">
+			<p>
+				<input id="management" type="button" value="账号管理" onfocus="blur()" />
+			</p>
+			<form> <!--若写action，http协议不安全，控制台会有提示，改为https（证书要收费）后即可-->
+				<div id="typeChose">
+				<label class="accountType">账户类型：<label>
+					<form>
+						<label><input name="worker" type="radio" checked="true" value="1"/>管理员</label>
+						<label><input name="worker" type="radio" value="3"/>检收员</label>
+						<label><input name="worker" type="radio" value="2"/>工人</label>
+					</form>
+				</div>
+				<p id="username">
+					<label>username</label>
+					<input id="myUsername" type="text" name="username"/><!--若设置action，submit提交后，后台通过name获取value-->
+					<!--<a id="register">注册账号</a>-->
+				</p>
+				<p id="password">
+					<label>password</label>
+					<input id="myPassword" type="password" name="password"/>
+				</p>
+				<p>
+					<input id="comfirm" type="button" value="register" onfocus="blur()" />
+				</p>
+				<p id="info"></p>
+			</form>
+			<div id="management-blank">
+				<p id="accountType"><span id="manageAccount">管理员</span><span id="checkAccount">检收员</span><span id="workerAccount">工人</span></p>
+				<div id="tableWindow" style="overflow:hidden;height:512px;">
+					<div id="tableWrapper">
+						<table id="management-table0" class="management-table">
+						</table>
+						<table id="management-table1" class="management-table">
+						</table>
+						<table id="management-table2" class="management-table">
+							<!--<tr class="table-title">
+							  <th>用户名</th>
+							  <th>初始密码</th>
+							  <th>操作</th>
+							</tr>
+							<tr class="accountInfo">
+							  <td class="accountName">张三</td>
+							  <td class="originPassword">123456</td>
+							  <td class="delete"><a>删除</a></td>
+							</tr>-->
+						</table>
+					</div>
+				</div>
+				<div id="pageControl"><a class="lastPage">上一页</a><a class="nextPage">下一页</a></div>
+			</div>
+		</div>
+		<!--<div id="managementTypeChose">
+			<span id="closeBoard"></span>
+			<label>请选择要管理的账号类型：</label>
+			<form>
+				<label>管理员<input name="management-worker" type="radio" checked="true" value="管理员"/></label>
+				<label>检收员<input name="management-worker" type="radio" value="检收员"/></label>
+				<label>工&nbsp人<input name="management-worker" type="radio" value="工人"/></label>
+			</form>
+			<input id="typeComfirm" type="button" value="确定"/>
+		</div>-->
+	</div>
+</body>
+<script src="lib/jquery.js"></script>
+<script src="lib/md5.js"></script>
+<script src="lib/jquery.animate-colors-min.js"></script>
+<!--颜色动画库
+	$('#demodiv').animate({ color:'#E4D8B8' })
+	$('#demodiv').animate({ backgroundColor:'#400101' })
+	$('#demodiv').animate({ borderBottomColor:'#00346B' })
+	$('#demodiv').animate({ borderColor:'#F2E2CE' })
+	$('#demodiv').animate({ color:'rgba(42, 47, 76, 0.1)' })-->
+<script type="text/javascript" src="JavaScript/register.js"></script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang='en-US'>
+<head>
+	<meta charset='UTF-8'>
+	<link href='../Image/favicon.ico' rel='shortcut icon'>
+	<script src='../lib/jquery.js'></script>
+	<title>博客编辑</title>
+	<?php
+		session_start();
+		if(isset($_SESSION['username']))
+		{
+			echo '登陆成功!';
+		}
+		else
+		{
+			echo '您没有权限访问此页面！';
+		}
+	?>
+</head>
+
+<body>
+	<!-- 加载编辑器的容器 -->
+	<script id='container' name='content' type='text/plain'></script>
+	<input type='button' name='Submit' value=' 提交 ' onClick='uptext();'/>　
+	<!-- 配置文件 -->
+	<script type='text/javascript' src='ueditor.config.js'></script>
+	<!-- 编辑器源码文件 -->
+	<script type='text/javascript' src='ueditor.all.js'></script>
+	<!-- 实例化编辑器 -->
+	<script type='text/javascript'>
+		var ue = UE.getEditor('container');
+		function uptext(){
+				if (!ue.hasContents()){
+					alert('请先填写内容!');
+				}else{
+					var data=ue.getContent();
+					//console.log(data);
+					$.post('http://127.0.0.1/cloudRelaxing/write.php',{content:data},function(result){
+							alert(result);
+					});
+				}
+			}	
+	</script>
+</body>
+<?php
+	unset($_SESSION['username']);
+	echo '注销成功';
+?>
+</html>

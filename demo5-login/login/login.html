@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="favicon.ico" rel="shortcut icon"/>
+<title>用户登录</title>
+<link rel='stylesheet' href='CSS/login.css' />
+</head>
+
+<body>
+	<div id="hidebg"></div>
+	<div id="wrap">
+		<div id="login">
+			<form> <!--若写action，http协议不安全，控制台会有提示，改为https（证书要收费）后即可-->
+				<p id="username">
+					<label>username</label>
+					<input id="myUsername" type="text" name="username"/><!--若设置action，submit提交后，后台通过name获取value-->
+					<!--<a id="register">注册账号</a>-->
+				</p>
+				<p id="password">
+					<label>password</label>
+					<input id="myPassword" type="password" name="password"/><a id="revisePassword">修改密码</a>
+				</p>
+				<p>
+					<input id="comfirm" type="button" value="login" onfocus="blur()" />
+				</p>
+				<p id="info"></p>
+			</form>
+		</div>
+	</div>
+	<div id="revisePasswordBoard">
+			<span id="closeBoard"></span>
+			<label>请输入当前密码：</label>
+			<input id="myOldPassword" class="input-password" type="password"/>
+			<label>请输入新密码：</label>
+			<input id="myNewPassword" class="input-password" type="password"/>
+			<label>请确认新密码：</label>
+			<input id="myNewPassword2" class="input-password" type="password"/>
+			<input type="button" id="revisePasswordComfirm" value="提&nbsp&nbsp交"/>
+	</div>
+</body>
+<script src="lib/jquery.js"></script>
+<script src="lib/md5.js"></script>
+<script src="lib/jquery.animate-colors-min.js"></script>
+<!--颜色动画库
+	$('#demodiv').animate({ color:'#E4D8B8' })
+	$('#demodiv').animate({ backgroundColor:'#400101' })
+	$('#demodiv').animate({ borderBottomColor:'#00346B' })
+	$('#demodiv').animate({ borderColor:'#F2E2CE' })
+	$('#demodiv').animate({ color:'rgba(42, 47, 76, 0.1)' })-->
+<script type="text/javascript" src="JavaScript/login.js"></script>
+</html>

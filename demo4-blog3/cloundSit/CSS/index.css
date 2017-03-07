@@ -1,0 +1,255 @@
+@charset "utf-8";
+/*@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'codropsicons';
+	src:url('../fonts/codropsicons/codropsicons.eot');
+	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+}*/
+/* CSS Document */
+*{margin:0;padding:0;text-align:center;}
+
+body{
+	font-size:14px;
+	font-family:"宋体","Roboto",sans-serif;
+	background-color:#f2f3f5;
+}
+
+	a{
+		text-decoration:none;
+		outline: none; /*去除点击后的黑线*/
+	}
+	li{
+		list-style-type:none;
+	}
+
+#top{
+		height:300px;
+		background-color:#aaa;
+		background-image:url(../Image/cropped-header-image.png);/*前面必须加上../（表示父目录），否则无法显示*/ 
+		background-repeat:no-repeat; 
+		background-attachment:fixed;
+	}
+
+#hair{
+	height:240px;
+	position:relative;
+}
+	
+#hair a{
+	/*display:block;
+	height:60px;
+	width:100%;*/
+	//font-family: 'codropsicons';
+	font-size:30px;
+    color:#0cf;/*a 标签不会继承祖先颜色属性 需要直接对a进行设置*/
+	opacity:0.4;/*for firefox that support css3*/
+	-moz-opacity:0.4;/*for firefox*/
+	filter:progid:DXImageTransForm.Microsoft.Alpha(opacity="40");/*for IE*/
+	position:absolute;
+	top:100px;
+	left: 50%;
+	margin-left: -25%;
+}
+
+#menu_blank{
+	height:60px;
+}
+	
+#menu{
+	height:60px;
+	width:1200px;
+	margin:0 auto;
+}
+	
+#menu li{
+	display:inline-block;
+	height:60px;
+	font-size:26px;
+	line-height:60px;
+	margin-left:10px;
+}
+
+#menu li a{
+	color:#888;
+}
+
+#main{
+		position:relative;
+		width:1200px;
+		height:7880px;
+		margin:50px auto 0;
+	}
+	
+#blank{
+		width:270px;
+		height:800px;
+		position:absolute;
+		top:0;
+		left:930px;
+	}
+
+#info>li{
+	background-color:#fff;
+	margin-bottom:50px;
+	padding-bottom:1px;
+	/*border: 1px solid #ccc;*/
+	box-shadow:0px 0px 5px #888888;
+}
+
+#intro img{
+	display:inline-block;
+	height:120px;
+	width:120px;
+	margin:20px;
+	border:2px #aaf solid;
+	-moz-border-radius: 60px; 
+	-webkit-border-radius: 60px; 
+    border-radius:60px; 
+}
+
+#intro h2{
+	font-size:18px;
+	color:#444;
+	margin:10px auto;
+}
+
+#intro p{
+	font-size:14px;
+	color:#555;
+	letter-spacing:1px;
+	line-height:20px;
+	margin:10px 35px;
+}
+
+#info #writingsStatis{
+	padding:1px;/*不设置这个1px内边距，则第一个元素的上外边距不生效*/
+}
+
+#info #writingsStatis h2{
+	font-size:18px;
+	color:#444;
+	margin:20px auto;
+}
+
+#info #writingsStatis li{
+	margin:10px auto;
+}
+
+#info #writingsStatis li a{
+	font-size:14px;
+	color:#a00;
+}
+
+#info #writingsStatis li span{
+	margin-left:5px;
+	color:#666;
+}
+
+#info #visitorStatis{
+	padding:10px;
+}
+
+#info #visitorStatis h2{
+	display:inline;
+	font-size:12px;
+	color:#666;
+	margin:10px;/*内联元素垂直margin无效，水平有效*/
+				/*内联对象设padding，经过测试得到只有设padding-top的时候不起作用，padding-left padding-right padding-bottom都是有效果的*/
+}
+#info #visitorStatis span{
+	font-size:12px;
+	color:#a00;
+}
+
+#content{
+		width:880px;
+		height:100%;
+		position:absolute;
+		top:0;
+		left:0;
+		overflow:hidden;
+	}
+
+#writings li{
+	background-color:#fff;
+	margin-bottom:50px;
+	padding-bottom:1px;/*若不设置1px，则最后一个a标签的margin属性会体现在li外，导致li间距过大，a距底部过近*/
+	/*border: 1px solid #ccc;*/
+	box-shadow:0px 0px 5px #888888;
+}
+
+#writings li img{
+	width:100%;
+	height:400px;
+}
+
+#writings li h2{
+	margin:50px auto;
+}
+
+#writings li h2 a{
+	font-size:26px;
+	color:#666;
+}
+
+#writings li p{
+	margin:50px 10px;
+	color:#888;
+	font-size:22px;
+}
+
+
+#writings li>a{
+	display:inline-block;
+	color:#888;
+	font-size:20px;
+	border:2px #ddd solid;
+	-moz-border-radius: 35px; 
+	-webkit-border-radius: 35px; 
+    border-radius:35px; 
+	margin:0 auto 50px;/*由于设置了border，上下外边距不连接，上外边距不再取最大值而是叠加，因此这里设为0，再重设下外边距*/
+	padding:8px 14px;
+}
+
+#pageNumber li{
+	display:inline-block;
+	margin-left:10px;
+	float:left;
+}
+
+#pageNumber li a{
+	display:inline-block;
+	height:30px;
+	width:30px;
+	color:#8e8a8a;
+	background-color:#fff;
+	font-size:20px;
+	line-height:30px;
+	box-shadow:0px 0px 3px #888;
+}
+
+#pageNumber #nextPage{ /*若不在前面加个id名，则权值不够高，无法生效*/
+	display:none;
+	height:30px;
+	width:70px;
+	font-size:14px;
+}
+
+#pageNumber #nextPage span{
+	font-size:9px;
+	font-weight:bold;
+	color:#5e5a5a;
+}
+
+#bottom{
+		height:60px;
+		font-size:18px;
+		text-align:center;
+		line-height:60px;
+		color:#fff;
+		background-color:#303a42;
+	}

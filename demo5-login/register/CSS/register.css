@@ -1,0 +1,295 @@
+/*notepad里内联代码显示全黑（后缀不是.css），但不影响使用*/
+	*{margin:0;padding:0;}
+	body{
+		background-color:#6090b8;
+		overflow:hidden;
+	}
+	/*#hidebg { 
+	  position:absolute;left:0px;top:0px;  
+      background-color:#002;   
+      width:100%;    
+      filter:alpha(opacity=30);  
+      opacity:0.3;  
+	  display:none;
+      z-Index:2;
+	 }*/
+	#wrap{
+		background-image:url(../Image/register-background.jpg);
+		background-size:100% 100%;
+		position:relative;
+	 }
+	 #logout{
+		position:absolute;
+		left:80%;
+		top:2%;
+		width:60px;
+		height:30px;
+		color:#ddd;
+		font-size:16px;
+		font-weight:bold;
+		background-color:#2fa2db;
+		border:2px solid #ddd;
+		-moz-border-radius: 8px; 
+		-webkit-border-radius:8px; 
+		border-radius:8px;
+		outline:0;
+		cursor:pointer;
+	 }
+	 #logout:hover{
+		color:#2fa2db;
+		background-color:#ddd;
+		border:2px solid #2fa2db;
+	 }
+	 #register{
+		height:40%;
+		width:40%;
+		position:absolute;
+		left:40%;
+		top:15%;
+	 }
+	 p{
+		margin-bottom:15px;
+	 }
+	 label{
+		display:block;
+		font-size:25px;
+		color:#d5d500;
+		margin-bottom:5px;		
+	 }
+	 input{
+		display:block;
+		height:30px;
+		width:280px;
+		font-size:20px;
+		background-color:#edebed;
+		border:0;
+	 }
+	 /*账户类型选择*/
+	 #typeChose input{
+		display:inline-block;
+		width:15px;
+		height:15px;
+		vertical-align:middle;
+		cursor:pointer;
+	 }
+	  #typeChose label{
+		display:inline-block;
+		font-size:15px;
+		font-weight:bold;
+		height:20px;
+		line-height:20px;
+	 }
+	 #typeChose .accountType{
+		font-size:16px;
+	 }
+	 
+	 #comfirm{
+		height:35px;
+		width:80px;
+		font-size:18px;
+		margin-left:200px;
+		color:#fbe6d4;
+		background-color:#0c6700;
+		-moz-border-radius: 22px; 
+		-webkit-border-radius: 22px; 
+		border-radius:22px;
+		outline:0;/*去掉点击后的黑线*/
+		cursor:pointer;
+	 }
+	  #management{
+		height:30px;
+		width:150px;
+		font-size:18px;
+		margin-top:40px;
+		margin-left:300px;
+		color:#fbe6d4;
+		background-color:#0b6474;
+		-moz-border-radius: 22px; 
+		-webkit-border-radius: 22px; 
+		border-radius:20px;
+		outline:0;/*去掉点击后的黑线*/
+		cursor:pointer;
+	 }
+	 #info{
+		color:#d5d500;
+		font-size:20px;
+		font-weight:800;
+	 }
+	 
+	/* #managementTypeChose{
+		display:none;
+		width:400px;
+		height:300px;
+		background-color:#0b6474;
+		position:fixed;
+		top:20%;
+		left:38%;
+		padding-top:30px;
+		padding-left:80px;
+		-moz-border-radius: 22px; 
+		-webkit-border-radius: 22px; 
+		border-radius:20px;
+		z-Index:3;
+	 }
+	 #managementTypeChose input{
+		display:inline-block;
+		cursor:pointer;
+		width:20px;
+		height:20px;
+		margin-left:10px;
+	 }
+	 #managementTypeChose label{
+		margin-top:20px;
+	 }
+	 #managementTypeChose #typeComfirm{
+		display:block;
+		width:70px;
+		height:35px;
+		margin-left:200px;
+		margin-top:20px;
+		font-weight:bold;
+		color:#fbe6d4;
+		background-color:#0b6474;
+		border:2px solid #fbe6d4;
+		-moz-border-radius: 22px; 
+		-webkit-border-radius: 22px; 
+		border-radius:20px;
+		outline:0;
+	 }
+	 #managementTypeChose #typeComfirm:hover{
+		color:#0b6474;
+		background-color:#fbe6d4;
+	 }
+	  #closeBoard{
+		display:block;
+		width:20px;
+		height:20px;
+		margin-left:350px;
+		margin-top:-5px;
+		margin-bottom:10px;
+		background-image:url(../Image/close0.png);
+		cursor:pointer;
+	 }
+	 #closeBoard:hover{
+		background-image:url(../Image/close.png);
+	 }*/
+	 
+	 
+	#management-blank{
+		display:none;
+		background-color:#000;
+		margin-top:-230px;
+		margin-left:300px;
+		-moz-border-radius: 22px; 
+		-webkit-border-radius: 22px; 
+		border-radius:20px;
+		width:620px;
+		padding:10px;
+		padding-bottom:1px;
+	 }
+	 #accountType{
+		width:200px;
+		color:rgba(0,163,163,0.8);
+		font: 15px "微软雅黑", Arial, Helvetica, sans-serif;
+		margin:5px auto;
+	 }
+	 #accountType span{
+		display:inline-block;
+		margin-left:20px;
+		cursor:pointer;
+	 }
+	 #accountType span:hover{
+		color:rgba(0,233,233,0.8);
+	 }
+	 #accountType #manageAccount{
+		color:rgba(0,233,233,0.8);
+	 }
+	 #tableWrapper{
+		position:relative;
+	 }
+	.management-table{
+		width:600px;
+		border-collapse: collapse;
+		text-align: left;
+		margin: 10px 5px 5px 10px;
+		cursor: default;
+		border: 1px solid #ccc;
+		margin-top:20px;
+		box-shadow: 0px 0px 10px rgba(0,255,255,0.75);
+		border: 1px solid rgba(127,255,255,0.75);
+		-webkit-box-shadow: 0px 0px 8px rgba(0,255,255,0.75);
+		-moz-box-shadow: 0px 0px 8px rgba(0,255,255,0.75);
+		box-shadow: 0px 0px 8px rgba(0,255,255,0.75);
+		position:relative;
+	}
+	.table-title>th {
+		font-weight: 300;
+		text-align: center;
+		padding: 10px 0 10px 0;
+		font: 15px "微软雅黑", Arial, Helvetica, sans-serif;
+		background-color: rgba(0,93,93,0.8);
+		color: #efefef;
+		text-shadow: 0px 0px 20px rgba(127,255,255,1);
+	}
+	.management-table th, td {
+		border: 1px solid rgba(127,255,255,0.55);
+		
+	}
+	.accountInfo:hover {
+		background-color: rgba(0,99,99,0.9) !important;
+	}
+	.management-table td,td>a {
+		font: 13px "微软雅黑", Arial, Helvetica, sans-serif;
+		text-align: center;
+		padding: 6px 0 6px 0;
+		color: rgba(127,255,255,0.75);
+		text-shadow: 0px 0px 20px rgba(0,255,255,0.75);/*-webkit-filter: drop-shadow(0px 0px 20px rgba(0,255,255,0.95));
+		-moz-filter: drop-shadow(0px 0px 20px rgba(0,255,255,0.95));
+		-o-filter: drop-shadow(0px 0px 20px rgba(0,255,255,0.95));
+		-ms-filter: drop-shadow(0px 0px 20px rgba(0,255,255,0.95));
+		filter: drop-shadow(0px 0px 20px rgba(0,255,255,0.95));*/
+	}
+	.management-table td>a{
+		cursor:pointer;
+	} 
+	.accountInfo:nth-child(2n+1) {
+		background-color: rgba(0,127,127,0.1);
+	}
+	
+	#management-table1{
+		position:absolute;
+		top:-20px;
+		left:625px;
+	}
+	#management-table2{
+		position:absolute;
+		top:-20px;
+		left:1250px;
+	}
+	
+	#pageControl{
+		width:200px;
+		color:rgba(0,163,163,0.8);
+		font: 15px "微软雅黑", Arial, Helvetica, sans-serif;
+		margin:15px auto;
+	}
+	#pageControl a{
+		margin-left:46px;
+		cursor:pointer;
+	}
+	#pageControl a:hover{
+		color:rgba(0,233,233,0.8);
+	}
+	/*#closeBlank{
+		display:block;
+		width:20px;
+		height:20px;
+		margin-left:350px;
+		margin-top:-5px;
+		margin-bottom:10px;
+		background-image:url(../Image/close0.png);
+		cursor:pointer;
+	}
+	 #closeBlank:hover{
+		background-image:url(../Image/close.png);
+	 }*/

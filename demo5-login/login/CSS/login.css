@@ -1,0 +1,133 @@
+/*notepad里内联代码显示全黑（后缀不是.css），但不影响使用*/
+	*{margin:0;padding:0;}
+	body{
+		background-color:#6090b8;
+		overflow:hidden;
+	}
+	#hidebg { 
+	  position:absolute;left:0px;top:0px;  
+      background-color:#002;   
+      width:100%;  /*宽度设置为100%，这样才能使隐藏背景层覆盖原页面*/   
+      filter:alpha(opacity=30);  /*设置透明度为60%*/   
+      opacity:0.3;  /*非IE浏览器下设置透明度为60%*/   
+	  display:none;  
+      z-Index:2;
+	  }
+	#wrap{
+		width:1366px;
+		height:768px;
+		background-image:url(../Image/login-background.jpg);
+		background-size:100% 100%;
+		position:relative;
+		margin:auto;
+	 }
+	 #login{
+		height:25%;
+		width:25%;
+		position:absolute;
+		left:20%;
+		top:20%;
+	 }
+	 p{
+		margin-bottom:15px;
+	 }
+	 label{
+		display:block;
+		font-size:20px;
+		color:#07275c;
+		margin-bottom:5px;		
+	 }
+	 input{
+		display:inline-block;
+		height:25px;
+		width:200px;
+		font-size:18px;
+		background-color:#edebed;
+		border:0;
+	 }
+	 #comfirm{
+		height:30px;
+		width:70px;
+		font-size:16px;
+		margin-left:130px;
+		color:#fbe6d4;
+		background-color:#00b2f1;
+		-moz-border-radius: 20px; 
+		-webkit-border-radius: 20px; 
+		border-radius:20px;
+		outline:0;/*去掉点击后的黑线*/
+		cursor:pointer;
+	 }
+	 #info{
+		color:#2a4a8a;
+		font-weight:600;
+	 }
+	 /*修改密码部分*/
+	 #revisePassword{
+		display:inline-block;
+		margin-left:10px;
+		font-size:12px;
+		color:#666;
+		cursor:pointer;
+	 }
+	 #revisePassword:hover{
+		color:#888;
+	 }
+	 #revisePasswordBoard{
+		display:none;
+		width:300px;
+		height:310px;
+		background-color:#038acb;
+		padding-top:50px;
+		padding-left:100px;
+		border:2px solid #69c;
+		-moz-border-radius: 20px; 
+		-webkit-border-radius: 20px; 
+		border-radius:20px;
+		position:fixed;
+		top:20%;
+		left:40%;
+		z-Index:3;
+	 }
+	 #revisePasswordBoard label{
+		font-size:18px;
+		color:#e1e9fe;
+	 }
+	 #revisePasswordBoard input{
+		margin-bottom:16px;
+	 }
+	 #revisePasswordComfirm{
+		display:block;
+		width:60px;
+		height:28px;
+		font-size:18px;
+		font-weight:bold;
+		line-height:28px;
+		color:#00b2f1;
+		background-color:#edebed;
+		border:none;
+		margin-left:140px;
+		-moz-border-radius: 20px; 
+		-webkit-border-radius: 20px; 
+		border-radius:20px;
+		cursor:pointer;
+		outline:0;
+	 }
+	 #revisePasswordComfirm:hover{/*冒号两边不能有空格，否则无效*/
+		color:#edebed;
+		background-color:#00b2f1;
+	 }
+	 #closeBoard{
+		display:block;
+		width:20px;
+		height:20px;
+		/*background-color:#fff;*/
+		margin-left:260px;
+		margin-top:-35px;
+		margin-bottom:40px;
+		background-image:url(../Image/close0.png);
+		cursor:pointer;
+	 }
+	 #closeBoard:hover{
+		background-image:url(../Image/close.png);
+	 }
